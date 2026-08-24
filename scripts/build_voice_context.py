@@ -15,8 +15,7 @@ TOKEN_RE = re.compile(r"[a-z0-9']+")
 SOURCE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
 SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
 LOCAL_OUTPUT_RE = re.compile(
-    r"^voice-context(?:\.[a-z0-9][a-z0-9_-]*)?\.local\.md$",
-    re.IGNORECASE,
+    r"^voice-context(?:\.[a-z0-9][a-z0-9_-]*)?\.local\.md$"
 )
 ROOT_KEYS = {"version", "subject", "sources"}
 SUBJECT_KEYS = {"label", "consent_confirmed", "consent_scope", "final_ratifier"}

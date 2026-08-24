@@ -119,6 +119,7 @@ class VoiceBuilderTests(unittest.TestCase):
         self.assertTrue(safe_local_output_name(Path("voice-context.launch.local.md")))
         self.assertFalse(safe_local_output_name(Path("private.local.md")))
         self.assertFalse(safe_local_output_name(Path("voice-context..local.md")))
+        self.assertFalse(safe_local_output_name(Path("VOICE-CONTEXT.LOCAL.MD")))
 
 
 if __name__ == "__main__":
