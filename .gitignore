@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Voice evidence and derived local artefacts must never be committed.
+corpus/
+corpora/
+profiles/
+profile_exports/
+private_sources/
+voice-manifest.local.json
+voice-manifest.*.local.json
+voice-context.local.md
+voice-context.*.local.md
+drafts.local/
