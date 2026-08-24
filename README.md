@@ -26,7 +26,7 @@ No corpus, voice profile, personal example, or generated draft is included.
 git clone https://github.com/AntreasAntoniou/voice-builder.git
 cd voice-builder
 python3 scripts/validate_package.py
-cp examples/voice-manifest.example.json voice-manifest.local.json
+cp examples/voice-manifest.example.json examples/voice-manifest.local.json
 python3 scripts/build_voice_context.py --hash examples/source.example.md
 ```
 
@@ -34,7 +34,7 @@ Replace the example source with text you authored, record its printed SHA-256 in
 
 ```bash
 python3 scripts/build_voice_context.py \
-  --manifest voice-manifest.local.json \
+  --manifest examples/voice-manifest.local.json \
   --task "Describe a small software release" \
   --audience "other maintainers" \
   --register technical \
@@ -46,7 +46,11 @@ The output is deterministic for the same manifest, source bytes, and CLI argumen
 
 ## Install as a skill
 
-Copy or symlink this repository into the skills directory used by your agent. The directory name should remain `voice-builder`, with `SKILL.md` at its root.
+```bash
+npx skills add AntreasAntoniou/voice-builder
+```
+
+Or copy/symlink this repository into the skills directory used by your agent. The directory name should remain `voice-builder`, with `SKILL.md` at its root.
 
 ## Test
 
