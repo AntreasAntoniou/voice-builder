@@ -1,16 +1,16 @@
-# Dobbel
+# Doppel
 
 A consent-first Agent Skill for building a **digital twin of your own writing voice** without committing or uploading your corpus.
 
-Dobbel models how a consenting subject moves through prose: cadence, reasoning movement, compression, emphasis, and register. It is deliberately narrower than a whole-person digital twin. It does not claim to be the person, simulate their private mind, or publish as them.
+Doppel models how a consenting subject moves through prose: cadence, reasoning movement, compression, emphasis, and register. It is deliberately narrower than a whole-person digital twin. It does not claim to be the person, simulate their private mind, or publish as them.
 
-Dobbel separates three things that are often collapsed:
+Doppel separates three things that are often collapsed:
 
 1. **Voice evidence**: subject-authored text used to learn cadence and reasoning movement.
 2. **Fact authority**: current sources used to support claims.
 3. **Publication authority**: the human who reviews and approves the exact final artefact.
 
-That separation is the product. The Dobbel is an editorial writing-voice twin, not an impersonation engine.
+That separation is the product. The Doppel is an editorial writing-voice twin, not an impersonation engine.
 
 ## What is included
 
@@ -25,8 +25,8 @@ No corpus, voice profile, personal example, or generated draft is included.
 ## Quick start
 
 ```bash
-git clone https://github.com/AntreasAntoniou/dobbel.git
-cd dobbel
+git clone https://github.com/AntreasAntoniou/doppel.git
+cd doppel
 python3 scripts/validate_package.py
 cp examples/voice-manifest.example.json examples/voice-manifest.local.json
 python3 scripts/build_voice_context.py --hash examples/source.example.md
@@ -49,10 +49,10 @@ The output is deterministic for the same manifest, source bytes, and CLI argumen
 ## Install as a skill
 
 ```bash
-npx skills add AntreasAntoniou/dobbel
+npx skills add AntreasAntoniou/doppel
 ```
 
-Or copy/symlink this repository into the skills directory used by your agent. The directory name should remain `dobbel`, with `SKILL.md` at its root.
+Or copy/symlink this repository into the skills directory used by your agent. The directory name should remain `doppel`, with `SKILL.md` at its root.
 
 ## Test
 
@@ -65,15 +65,15 @@ The test suite creates neutral synthetic fixtures in temporary directories. It d
 
 ## Safety model
 
-Dobbel refuses unconsented subjects, non-subject-authored voice evidence, hash drift, and autonomous attribution. See [references/safety-and-consent.md](references/safety-and-consent.md) and [SECURITY.md](SECURITY.md).
+Doppel refuses unconsented subjects, non-subject-authored voice evidence, hash drift, and autonomous attribution. See [references/safety-and-consent.md](references/safety-and-consent.md) and [SECURITY.md](SECURITY.md).
 
-## Relation to other Dobbels
+## Relation to other Doppels
 
-The Dobbel family covers consented digital-twin work. This public skill owns the narrow **writing-voice** layer: subject-authored evidence in, human-ratified prose out. It does not perform the believed-human embodiment, full personality simulation, dialogic reconstruction, or identity persistence associated with a whole-person doppel.
+The Doppel family covers consented digital-twin work. This public skill owns the narrow **writing-voice** layer: subject-authored evidence in, human-ratified prose out. It does not perform the believed-human embodiment, full personality simulation, dialogic reconstruction, or identity persistence associated with a whole-person doppel.
 
 ## Relation to agent and knowledge graphs
 
-Dobbel is one authorship boundary around a broader agent work graph. It does **not** implement a knowledge graph, integrate with Anthropic's knowledge-graph cookbook, or modify Karpathy's `autoresearch`. The [composition map](docs/COMPOSITION.md) distinguishes execution topology from knowledge topology and links the primary sources precisely.
+Doppel is one authorship boundary around a broader agent work graph. It does **not** implement a knowledge graph, integrate with Anthropic's knowledge-graph cookbook, or modify Karpathy's `autoresearch`. The [composition map](docs/COMPOSITION.md) distinguishes execution topology from knowledge topology and links the primary sources precisely.
 
 ## License
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the public Dobbel package without third-party dependencies."""
+"""Validate the public Doppel package without third-party dependencies."""
 
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ def validate(root: Path = ROOT) -> list[str]:
     skill_path = root / "SKILL.md"
     if skill_path.is_file():
         skill = skill_path.read_text(encoding="utf-8")
-        if not skill.startswith("---\nname: dobbel\ndescription: "):
+        if not skill.startswith("---\nname: doppel\ndescription: "):
             errors.append("SKILL.md needs valid name and description frontmatter")
         for phrase in ("final ratifier", "Refuse third-party impersonation", "Never send"):
             if phrase not in skill:
@@ -68,7 +68,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("dobbel package validation passed")
+    print("doppel package validation passed")
     return 0
 
 

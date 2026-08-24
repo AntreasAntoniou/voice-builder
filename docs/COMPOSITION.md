@@ -19,7 +19,7 @@ The five skills below are an unaffiliated control layer for the **work graph** a
 | [Plus Ultra](https://github.com/AntreasAntoniou/plus-ultra) | Separates proposal, arbitration, mutation, and plan-blind reality verification. | It does not turn model judgment into factual ground truth by itself. |
 | [Cross Agent Sync](https://github.com/AntreasAntoniou/cross-agent-sync) | Preserves concise source-linked hand-offs across harnesses and sessions. | Its ledger is not a shared knowledge graph or a claim of shared agent memory. |
 | [Visual QA](https://github.com/AntreasAntoniou/visual-qa) | Adds deterministic rendered evidence and independent review when the output has a UI. | It evaluates visible artefacts, not graph extraction quality. |
-| [Dobbel](https://github.com/AntreasAntoniou/dobbel) | Builds a local, consent-first digital twin of the subject's writing voice for subject-ratified prose. | It is not a whole-person simulation, autonomous publication, third-party impersonation, or a public voice corpus. |
+| [Doppel](https://github.com/AntreasAntoniou/doppel) | Builds a local, consent-first digital twin of the subject's writing voice for subject-ratified prose. | It is not a whole-person simulation, autonomous publication, third-party impersonation, or a public voice corpus. |
 
 ## Puzzle-piece view
 
@@ -39,7 +39,7 @@ human objective ──► Agent Orchestra ──► isolated work graph
                 Cross Agent Sync   Visual QA
                 durable hand-off   rendered evidence
                        └──────┬──────┘
-                             Dobbel
+                             Doppel
                local evidence → human-ratified words
 ```
 

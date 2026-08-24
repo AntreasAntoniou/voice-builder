@@ -216,7 +216,7 @@ def main() -> int:
             max_chars=args.max_chars,
         )
     except ManifestError as exc:
-        raise SystemExit(f"dobbel: {exc}") from exc
+        raise SystemExit(f"doppel: {exc}") from exc
     args.output.write_text(context, encoding="utf-8")
     print(f"Wrote local context pack: {args.output}")
     return 0

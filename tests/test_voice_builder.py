@@ -24,7 +24,7 @@ def digest(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-class DobbelTests(unittest.TestCase):
+class DoppelTests(unittest.TestCase):
     def make_manifest(self, directory: Path, *, consent: bool = True, authorship: str = "subject") -> Path:
         source = (
             "A useful release names the mechanism and the evidence. The signal should remain inspectable.\n\n"
