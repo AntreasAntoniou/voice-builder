@@ -11,7 +11,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_voice_context import ManifestError, build_context, validate_manifest  # noqa: E402
+from build_voice_context import (  # noqa: E402
+    ManifestError,
+    build_context,
+    safe_local_output_name,
+    validate_manifest,
+)
 from validate_package import validate  # noqa: E402
 
 
@@ -108,6 +113,12 @@ class VoiceBuilderTests(unittest.TestCase):
 
     def test_public_package_passes_validator(self) -> None:
         self.assertEqual(validate(ROOT), [])
+
+    def test_output_name_must_match_shipped_ignore_rules(self) -> None:
+        self.assertTrue(safe_local_output_name(Path("voice-context.local.md")))
+        self.assertTrue(safe_local_output_name(Path("voice-context.launch.local.md")))
+        self.assertFalse(safe_local_output_name(Path("private.local.md")))
+        self.assertFalse(safe_local_output_name(Path("voice-context..local.md")))
 
 
 if __name__ == "__main__":

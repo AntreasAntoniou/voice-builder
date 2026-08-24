@@ -14,6 +14,10 @@ from typing import Any
 TOKEN_RE = re.compile(r"[a-z0-9']+")
 SOURCE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
 SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
+LOCAL_OUTPUT_RE = re.compile(
+    r"^voice-context(?:\.[a-z0-9][a-z0-9_-]*)?\.local\.md$",
+    re.IGNORECASE,
+)
 ROOT_KEYS = {"version", "subject", "sources"}
 SUBJECT_KEYS = {"label", "consent_confirmed", "consent_scope", "final_ratifier"}
 SOURCE_KEYS = {"id", "path", "authorship", "sha256", "registers"}
@@ -184,6 +188,11 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
+def safe_local_output_name(path: Path) -> bool:
+    """Return whether the basename is covered by the shipped Git ignore rules."""
+    return LOCAL_OUTPUT_RE.fullmatch(path.name) is not None
+
+
 def main() -> int:
     args = _parser().parse_args()
     if args.hash:
@@ -194,8 +203,11 @@ def main() -> int:
     missing = [name for name in ("manifest", "task", "audience", "output") if getattr(args, name) is None]
     if missing:
         raise SystemExit(f"Missing required arguments: {', '.join('--' + item for item in missing)}")
-    if not args.output.name.endswith(".local.md"):
-        raise SystemExit("--output must end in .local.md so the recommended Git ignore rule applies")
+    if not safe_local_output_name(args.output):
+        raise SystemExit(
+            "--output must be voice-context.local.md or "
+            "voice-context.<label>.local.md so the shipped Git ignore rule applies"
+        )
     try:
         context = build_context(
             args.manifest,
