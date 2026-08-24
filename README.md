@@ -65,9 +65,9 @@ The test suite creates neutral synthetic fixtures in temporary directories. It d
 
 Voice Builder refuses unconsented subjects, non-subject-authored voice evidence, hash drift, and autonomous attribution. See [references/safety-and-consent.md](references/safety-and-consent.md) and [SECURITY.md](SECURITY.md).
 
-## Relation to autoresearch
+## Relation to agent and knowledge graphs
 
-Karpathy's March 2026 [`autoresearch`](https://github.com/karpathy/autoresearch) release demonstrates a small, measurable loop in which an agent edits one training file, runs a fixed-time experiment, and keeps or discards the change. Voice Builder does **not** integrate with or modify autoresearch. It is one possible communication layer around a broader agent workflow. See [docs/COMPOSITION.md](docs/COMPOSITION.md) for the precise, unaffiliated conceptual map.
+Voice Builder is one communication boundary around a broader agent work graph. It does **not** implement a knowledge graph, integrate with Anthropic's knowledge-graph cookbook, or modify Karpathy's `autoresearch`. The [composition map](docs/COMPOSITION.md) distinguishes execution topology from knowledge topology and links the primary sources precisely.
 
 ## License
 
