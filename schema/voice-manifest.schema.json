@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/AntreasAntoniou/voice-builder/schema/voice-manifest.schema.json",
-  "title": "Voice Builder local provenance manifest",
+  "$id": "https://github.com/AntreasAntoniou/dobbel/schema/voice-manifest.schema.json",
+  "title": "Dobbel writing-voice provenance manifest",
   "type": "object",
   "additionalProperties": false,
   "required": ["version", "subject", "sources"],

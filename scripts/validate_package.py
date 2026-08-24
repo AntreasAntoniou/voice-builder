@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the public Voice Builder package without third-party dependencies."""
+"""Validate the public Dobbel package without third-party dependencies."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ REQUIRED = {
     "SECURITY.md",
     "CONTRIBUTING.md",
     ".gitignore",
+    "agents/openai.yaml",
     "schema/voice-manifest.schema.json",
     "scripts/build_voice_context.py",
     "references/safety-and-consent.md",
@@ -42,7 +43,7 @@ def validate(root: Path = ROOT) -> list[str]:
     skill_path = root / "SKILL.md"
     if skill_path.is_file():
         skill = skill_path.read_text(encoding="utf-8")
-        if not skill.startswith("---\nname: voice-builder\ndescription: "):
+        if not skill.startswith("---\nname: dobbel\ndescription: "):
             errors.append("SKILL.md needs valid name and description frontmatter")
         for phrase in ("final ratifier", "Refuse third-party impersonation", "Never send"):
             if phrase not in skill:
@@ -67,7 +68,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("voice-builder package validation passed")
+    print("dobbel package validation passed")
     return 0
 
 

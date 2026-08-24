@@ -1,11 +1,11 @@
 ---
-name: voice-builder
-description: Build a consent-first, provenance-aware writing voice profile from a person's own local source material, then draft or revise text for that person's review. Use when someone wants to preserve their own cadence across essays, technical writing, outreach, or social posts without uploading a private corpus. Not for impersonation, autonomous posting, or cloning a third party.
+name: dobbel
+description: Build a consent-first, provenance-aware digital twin of a person's own writing voice from local subject-authored material, then use that writing-voice Dobbel to draft or revise text for the subject's review. Use when someone wants a digital twin of their own cadence, reasoning movement, and registers across essays, technical writing, outreach, or social posts without uploading a private corpus. Not a personality twin, believed-human simulation, third-party clone, or autonomous publisher.
 ---
 
-# Voice Builder
+# Dobbel — Digital Twin Writing Voice
 
-Help a person write with more of their own texture. The subject remains the author and final ratifier; every output is a draft.
+Build a bounded digital twin of how a consenting person moves through writing. A Dobbel models writing voice from evidence; it does not simulate the whole person. The subject remains the author and final ratifier, and every output remains a draft.
 
 ## Boundaries
 
@@ -33,9 +33,11 @@ Read [references/safety-and-consent.md](references/safety-and-consent.md) before
      --output voice-context.local.md
    ```
 
-4. Read the context pack completely. Extract recurring reasoning moves, compression/expansion patterns, boundaries, and register shifts. Do not reduce the person to punctuation or catchphrases.
+4. Read the context pack completely. Extract recurring reasoning moves, compression/expansion patterns, boundaries, and register shifts. Treat that evidence-backed model as the writing-voice Dobbel; do not reduce the person to punctuation or catchphrases.
 5. Draft from the subject's intent and current facts. Label the output as a draft requiring their ratification.
 6. Review twice: first for factual/semantic correctness, then for whether one mind appears to move through the piece. Remove copied phrases, invented claims, and generic polish.
 7. Return the draft to the subject. Publication requires explicit approval of that exact version.
+
+For a read-only invocation, validate sources and build the context in memory or in a temporary directory; do not leave a manifest, context pack, or draft in the source project.
 
 For narrow edits, preserve the original structure and strongest authored lines. For a new piece, ask only for missing intent or facts that would materially change the result.
